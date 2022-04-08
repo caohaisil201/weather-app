@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useContext } from "react";
+import { Context } from "./store/context";
+//style
+import "./style/_app.scss";
+//component
+import Background from "./components/Background";
+import Input from "./components/Input";
+import MainData from "./components/MainData";
+import WeekForecast from "./components/WeekForecast";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const context = useContext(Context);
+
+    return (
+        <div className="App">
+            <Background />
+            <Input />
+            <MainData/>
+            <WeekForecast/>
+        </div>
+    );
 }
 
 export default App;

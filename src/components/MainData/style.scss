@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+    padding: 0 80px;
+    margin: 60px 0;
+
+    .content {
+        width: 100%;
+        padding: 20px 0px;
+        margin-top: 20px;
+        display: flex;
+
+        .main-content{
+            width: 30%;
+            display: flex;
+            align-items: center;
+
+            .icon{
+                width: 100px;
+                height: 100px;
+
+                background-color: #ddd;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            .text{
+                padding-left: 15px;
+
+                .temperature{
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .sub-content{
+            width: 70%;
+
+            .box{
+                .in-day-stat{
+                    text-align: center;
+                }
+
+                // .forecast{
+                //     text-align: center;
+
+                //     .forecast-icon{
+                //         margin: 5px auto;
+                //         width: 40px;
+                //         height: 40px;
+
+                //         background-color: #ddd;
+
+                //         overflow: hidden;
+                //         border-radius: 50%;
+                //     }
+                // }
+            }
+        }
+    }
+}
