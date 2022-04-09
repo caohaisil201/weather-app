@@ -1,10 +1,10 @@
-import BackgroundImage from "../../static/images/sunset.jpg";
+import BackgroundImage from "../../assets/images/sunset.jpg";
 import "./style.scss";
 const Background = ({children}) => {
     
     return (
         <div className="background">
-            <img src={BackgroundImage}/>
+            <img src={BackgroundImage} alt="background"/>
             {children}
         </div>
     );

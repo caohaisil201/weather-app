@@ -1,25 +1,17 @@
 import StatItem from "./StatItem"
-import ForecastItem from "../ForecastItem"
 
-function SubContent() {
+function SubContent({data}) {
     return(
         <div className="sub-content">
             <div className="box">
-                <StatItem name="Humidity"/>
-                <StatItem name="Wind"/>
-                <StatItem name="Max"/>
-                <StatItem name="Min"/>
-                <StatItem name="Sunrise"/>
-                <StatItem name="Sunset"/>
+                <StatItem name="Humidity" humidity={data?.current?.humidity}/>
+                <StatItem name="Max" max={data?.forecast?.forecastday[0]?.day?.maxtemp_c}/>
+                <StatItem name="Min" min={data?.forecast?.forecastday[0]?.day?.mintemp_c}/>
             </div>
             <div className="box">
-                <ForecastItem time="time" temp="temp"/>
-                <ForecastItem time="time" temp="temp"/>
-                <ForecastItem time="time" temp="temp"/>
-                <ForecastItem time="time" temp="temp"/>
-                <ForecastItem time="time" temp="temp"/>
-                <ForecastItem time="time" temp="temp"/>
-                {/* <ForecastItem/> */}
+                <StatItem name="Wind" wind={data?.current?.wind_kph}/>
+                <StatItem name="Sunrise" sunrise={data?.forecast?.forecastday[0]?.astro?.sunrise}/>
+                <StatItem name="Sunset" sunset={data?.forecast?.forecastday[0]?.astro?.sunset}/>
             </div>
         </div>
     )

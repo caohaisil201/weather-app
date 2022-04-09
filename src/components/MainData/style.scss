@@ -1,60 +1,72 @@
 .container {
     width: 100%;
-    padding: 0 80px;
-    margin: 60px 0;
+    padding: 0 100px;
+    margin: 20px 0;
+
+    .location-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // .clock{
+        //     text-align: right;
+        // }
+    }
 
     .content {
         width: 100%;
         padding: 20px 0px;
         margin-top: 20px;
         display: flex;
+        justify-content: space-between;
 
-        .main-content{
+        .main-content,.sub-content{
+            padding: 20px 40px;
+            background-color: rgba(221, 221, 221, 0.3);
+
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #ddd;
+        }
+
+        .main-content {
             width: 30%;
+
             display: flex;
             align-items: center;
 
-            .icon{
-                width: 100px;
-                height: 100px;
+            .icon {
+                width: 130px;
+                height: 130px;
 
-                background-color: #ddd;
+                // background-color: #ddd;
                 border-radius: 50%;
                 overflow: hidden;
             }
 
-            .text{
+            .text {
                 padding-left: 15px;
 
-                .temperature{
+                .temperature {
                     font-size: 2rem;
                 }
             }
         }
 
-        .sub-content{
-            width: 70%;
+        .sub-content {
+            width: 50%;
 
-            .box{
-                .in-day-stat{
+            .box {
+                .in-day-stat {
+                    min-width: 100px;
                     text-align: center;
                 }
-
-                // .forecast{
-                //     text-align: center;
-
-                //     .forecast-icon{
-                //         margin: 5px auto;
-                //         width: 40px;
-                //         height: 40px;
-
-                //         background-color: #ddd;
-
-                //         overflow: hidden;
-                //         border-radius: 50%;
-                //     }
-                // }
             }
         }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container{
+        padding: 0 60px;
     }
 }
