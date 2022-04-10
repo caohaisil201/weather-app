@@ -7,9 +7,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // .clock{
-        //     text-align: right;
-        // }
     }
 
     .content {
@@ -21,11 +18,9 @@
 
         .main-content,.sub-content{
             padding: 20px 40px;
-            background-color: rgba(221, 221, 221, 0.3);
 
             border: 2px solid #ddd;
             border-radius: 10px;
-            box-shadow: 0 0 5px #ddd;
         }
 
         .main-content {
@@ -38,7 +33,6 @@
                 width: 130px;
                 height: 130px;
 
-                // background-color: #ddd;
                 border-radius: 50%;
                 overflow: hidden;
             }

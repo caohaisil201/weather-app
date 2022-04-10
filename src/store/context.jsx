@@ -11,6 +11,7 @@ export default function Provider({ children }) {
     const [input, setInput] = useState("");
     const [data, setData] = useState({});
     const [cityName, setCityName] = useState("");
+    const [style,setStyle]= useState('');
 
     useEffect(() => {
         async function fetchData() {
@@ -63,6 +64,7 @@ export default function Provider({ children }) {
         long: [long, setLong],
         data: [data, setData],
         cityName: [cityName, setCityName],
+        style: [style,setStyle],
     };
 
     return <Context.Provider value={store}>{children}</Context.Provider>;

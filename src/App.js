@@ -1,5 +1,5 @@
-// import { useEffect, useContext } from "react";
-// import { Context } from "./store/context";
+import { useContext } from "react";
+import { Context } from "./store/context";
 //style
 import "./style/_app.scss";
 //component
@@ -9,8 +9,11 @@ import MainData from "./components/MainData";
 import DailyForecast from "./components/DailyForecast";
 
 function App() {
+    const context =useContext(Context);
+    const [style,setStyle] = context.style;
+
     return (
-        <div className="App">
+        <div className={`App ${style}`}>
             <Background />
             <Input />
             <MainData/>
