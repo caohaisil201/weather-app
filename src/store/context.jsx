@@ -26,7 +26,9 @@ export default function Provider({ children }) {
                     setCityName(res.data.city);
                     return res;
                 })
-                .catch((error) => console.log(error));
+                .catch((error) => {
+                    console.log(error)
+                });
         }
         fetchData();
     }, [lat, long]);
@@ -45,11 +47,12 @@ export default function Provider({ children }) {
 
             axios.request(options)
                 .then((response) => {
-                    console.log(response.data);
                     setData(response.data);
                 })
                 .catch((error) => {
-                    console.error(error);
+                    setData({
+                        error: 'Invalid city, please try again'
+                    })
                 });
         }
         if(cityName){

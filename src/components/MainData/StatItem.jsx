@@ -6,13 +6,13 @@ const StatItem = ({ name, humidity, wind, max, min, sunrise, sunset }) => {
         else if (min) return `${min} \u00B0C`;
         else if (sunrise) return `${sunrise}`;
         else if (sunset) return `${sunset}`;
-        else return ``;
+        else return `0`;
     }
 
     return (
         <div className="in-day-stat">
-            <h3>{getStat()}</h3>
-            <h5>{name}</h5>
+            <h2>{getStat()}</h2>
+            <h4>{name}</h4>
         </div>
     );
 };

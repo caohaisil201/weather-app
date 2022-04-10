@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, } from "react";
 import "./style.scss";
 import MainContent from "./MainContent";
 import SubContent from "./SubContent";
@@ -9,6 +9,7 @@ const MainData = () => {
     const context = useContext(Context);
     const dataContext = context.data;
 
+
     return (
         <div className="container">
             <div className="location-info">
@@ -17,7 +18,7 @@ const MainData = () => {
             </div>
             <div className="content">
                 <MainContent data={dataContext[0]} />
-                <SubContent data={dataContext[0]} />
+                < SubContent data={dataContext[0]} />
             </div>
         </div>
     );
