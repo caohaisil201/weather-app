@@ -12,12 +12,8 @@ const MainData = () => {
     return (
         <div className="container">
             <div className="location-info">
-                <div>
                     <Clock data={dataContext[0]} />
-                </div>
-                <div>
                     <Clock />
-                </div>
             </div>
             <div className="content">
                 <MainContent data={dataContext[0]} />

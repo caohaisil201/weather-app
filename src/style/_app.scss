@@ -57,13 +57,135 @@ input {
             height: 40px;
 
             overflow: hidden;
-            border-radius: 50%;
         }
     }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 1199px) {
+    .App{
+
+    .container {
+        padding: 0 60px;
+        .content {
+            .main-content {
+                .icon {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+        }
+
+        .daily-forecast{
+            padding: 20px 10px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+}
+
+@media screen and (max-width: 991px) {
+    .App{
+
+    .container {
+        .content {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .sub-content {
+                width: 60%;
+                padding: 10px 20px;
+            }
+        }
+
+        .daily-forecast{
+            flex-wrap: wrap;
+            justify-content: space-around;
+            .forecast{
+                margin: 20px 30px;
+                .forecast-icon{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}
+
+}
+
+@media screen and (max-width: 767px) {
+    .App{
+
+    .container {
+        .location-info {
+            flex-direction: column-reverse;
+            .clock {
+                width: 100%;
+            }
+
+            .clock:last-child {
+                margin-bottom: 20px;
+            }
+        }
+        .content {
+            flex-direction: column;
+            .main-content {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-around;
+                margin-bottom: 50px;
+                .icon {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+
+            .sub-content {
+                width: 100%;
+            }
+        }
+    }
+}
+
+}
+
+@media screen and (max-width: 599px) {
     .App {
         width: 100%;
+        .container {
+            .content {
+                .sub-content {
+                    flex-direction: row;
+                    .box {
+                        flex-direction: column;
+                        .in-day-stat {
+                            margin: 20px 0;
+                        }
+                    }
+                }
+            }
+            .daily-forecast{
+                .forecast{
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 468px) {
+    .App {
+        .input {
+            width: 300px;
+        }
+        .container {
+            .content {
+                .main-content {
+                    flex-direction: column;
+                }
+            }
+        }
     }
 }

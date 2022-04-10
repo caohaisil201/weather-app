@@ -21,50 +21,37 @@ const Background = ({ children }) => {
     const imgRef = useRef();
     const context = useContext(Context);
     const data = context.data[0];
-    const [style,setStyle] = context.style;
+    
     useLayoutEffect(() => {
         if (data?.current) {
             let time = data.location.localtime.slice(11, 16);
             const weather = data.current.condition.text.toLowerCase();
             time = time.length === 4 ? "0" + time : time;
             if (time >= "19:00" || time < "05:00") {
-                setStyle("night");
                 setBackground(NightImage);
             } else if (time >= "05:00" && time < "06:59") {
-                setStyle("sunrise");
                 setBackground(SunriseImage);
             } else if (time >= "17:00" && time < "19:00") {
-                setStyle("sunset");
                 setBackground(SunsetImage);
             } else if (weather.includes("fog")) {
-                setStyle("fog");
                 setBackground(FogImage);
             } else if (weather.includes("cloudy")) {
-                setStyle("cloudy");
                 setBackground(CloudImage);
             } else if (weather.includes("overcast")) {
-                setStyle("overcast");
                 setBackground(OvercastImage);
             } else if (weather.includes("clear")) {
-                setStyle("clear");
                 setBackground(ClearImage);
             } else if (weather.includes("sunny")) {
-                setStyle("sunny");
                 setBackground(SunnyImage);
             } else if (weather.includes("drizzle") || weather.includes("rain")) {
-                setStyle("rain");
                 setBackground(RainImage);
             } else if (weather.includes("snow")) {
-                setStyle("snow");
                 setBackground(SnowImage);
             } else if (data.current.temp_c <= 20) {
-                setStyle("cool");
                 setBackground(CoolImage);
             } else if (data.current.temp_c >= 32) {
-                setStyle("hot");
                 setBackground(HotImage);
             } else {
-                setStyle("");
                 setBackground(ThumbnailImage);
             }
         }

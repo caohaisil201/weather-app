@@ -4,6 +4,7 @@
     margin: 20px 0;
 
     .location-info {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -24,16 +25,15 @@
         }
 
         .main-content {
-            width: 30%;
-
+            width: 35%;
             display: flex;
             align-items: center;
-
+            justify-content: center;
             .icon {
                 width: 130px;
                 height: 130px;
 
-                border-radius: 50%;
+                // border-radius: 50%;
                 overflow: hidden;
             }
 
@@ -48,7 +48,9 @@
 
         .sub-content {
             width: 50%;
-
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
             .box {
                 .in-day-stat {
                     min-width: 100px;
@@ -56,11 +58,5 @@
                 }
             }
         }
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    .container{
-        padding: 0 60px;
     }
 }
