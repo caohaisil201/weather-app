@@ -12,7 +12,7 @@ const ForecastItem = (props) => {
                 <img src={props.icon||MiniThumbnail} alt="icon"/>
             </div>
             <h4>{props.temp} &#8451;</h4>
-            <h5>{props.text}</h5>
+            <p>{props.text}</p>
         </div>
     );
 };

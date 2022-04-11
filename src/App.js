@@ -1,5 +1,5 @@
 //style
-import "./style/_app.scss";
+import "./assets/style/_app.scss";
 //component
 import Background from "./components/Background";
 import Input from "./components/Input";

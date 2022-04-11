@@ -21,7 +21,7 @@ const Background = ({ children }) => {
     const imgRef = useRef();
     const context = useContext(Context);
     const data = context.data[0];
-    
+
     useLayoutEffect(() => {
         if (data?.current) {
             let time = data.location.localtime.slice(11, 16);

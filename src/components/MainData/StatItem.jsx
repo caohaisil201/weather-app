@@ -12,7 +12,7 @@ const StatItem = ({ name, humidity, wind, max, min, sunrise, sunset }) => {
     return (
         <div className="in-day-stat">
             <h2>{getStat()}</h2>
-            <h4>{name}</h4>
+            <p>{name}</p>
         </div>
     );
 };
