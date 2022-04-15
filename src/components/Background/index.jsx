@@ -16,6 +16,45 @@ import SunsetImage from "../../assets/images/sunset.jpg";
 import SunriseImage from "../../assets/images/sunrise.jpg";
 import "./style.scss";
 
+const backgroundList = [
+    {
+        key: 'fog',
+        background: FogImage,
+    },
+    {
+        key: 'cloudy',
+        background: CloudImage,
+    },
+    {
+        key: 'overcast',
+        background: OvercastImage,
+    },
+    {
+        key: 'clear',
+        background: ClearImage,
+    },
+    {
+        key: 'sunny',
+        background: SunnyImage,
+    },
+    {
+        key: 'drizzle',
+        background: RainImage,
+    },
+    {
+        key: 'rain',
+        background: RainImage,
+    },
+    {
+        key: 'snow',
+        background: SnowImage,
+    },
+    {
+        key: '',
+        background: ThumbnailImage,
+    },
+]
+
 const Background = ({ children }) => {
     const [background, setBackground] = useState(ThumbnailImage);
     const imgRef = useRef();
@@ -33,27 +72,31 @@ const Background = ({ children }) => {
                 setBackground(SunriseImage);
             } else if (time >= "17:00" && time < "19:00") {
                 setBackground(SunsetImage);
-            } else if (weather.includes("fog")) {
-                setBackground(FogImage);
-            } else if (weather.includes("cloudy")) {
-                setBackground(CloudImage);
-            } else if (weather.includes("overcast")) {
-                setBackground(OvercastImage);
-            } else if (weather.includes("clear")) {
-                setBackground(ClearImage);
-            } else if (weather.includes("sunny")) {
-                setBackground(SunnyImage);
-            } else if (weather.includes("drizzle") || weather.includes("rain")) {
-                setBackground(RainImage);
-            } else if (weather.includes("snow")) {
-                setBackground(SnowImage);
-            } else if (data.current.temp_c <= 20) {
-                setBackground(CoolImage);
-            } else if (data.current.temp_c >= 32) {
-                setBackground(HotImage);
-            } else {
-                setBackground(ThumbnailImage);
+            }else{
+                const index = backgroundList.findIndex(elem=>weather.includes(elem.key))
+                setBackground(backgroundList[index].background)
             }
+            // } else if (weather.includes("fog")) {
+            //     setBackground(FogImage);
+            // } else if (weather.includes("cloudy")) {
+            //     setBackground(CloudImage);
+            // } else if (weather.includes("overcast")) {
+            //     setBackground(OvercastImage);
+            // } else if (weather.includes("clear")) {
+            //     setBackground(ClearImage);
+            // } else if (weather.includes("sunny")) {
+            //     setBackground(SunnyImage);
+            // } else if (weather.includes("drizzle") || weather.includes("rain")) {
+            //     setBackground(RainImage);
+            // } else if (weather.includes("snow")) {
+            //     setBackground(SnowImage);
+            // } else if (data.current.temp_c <= 20) {
+            //     setBackground(CoolImage);
+            // } else if (data.current.temp_c >= 32) {
+            //     setBackground(HotImage);
+            // } else {
+            //     setBackground(ThumbnailImage);
+            // }
         }
     }, [data]);
 
