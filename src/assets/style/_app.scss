@@ -1,192 +1,186 @@
-@import "./reset";
-@import "./variable";
+@import './reset';
+@import './variable';
 
 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 input {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 .App {
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 
-    .main-content,
-    .sub-content,
-    .daily-forecast {
-        background-color: rgba(221, 221, 221, 0.7) !important;
+  .main-content,
+  .sub-content,
+  .daily-forecast {
+    background: transparent;
+    backdrop-filter: blur(5px);
+    transition: all 0.2s linear;
+    border: 1px solid #000;
 
-        &:hover {
-            box-shadow: 0 0 5px #ddd;
-        }
+    &:hover {
+      transform: scale(1.1);
     }
+  }
 }
 
 .box {
-    display: flex;
-    // align-items: center;
-    justify-content: space-between;
-    margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 
-    &.daily-forecast {
-        padding: 20px 40px;
+  &.daily-forecast {
+    padding: 20px 40px;
 
-        border: 2px solid #ddd;
-        border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  .in-day-stat {
+    text-align: center;
+  }
+
+  .forecast {
+    width: 170px;
+    text-align: center;
+
+    .forecast-icon {
+      margin: 10px auto;
+      width: 80px;
+      height: 80px;
+
+      overflow: hidden;
     }
-
-    .in-day-stat {
-        text-align: center;
-    }
-
-    .forecast {
-        text-align: center;
-        // min-width: 150px;
-        // max-width: 170px;
-        width: 170px;
-        .forecast-icon {
-            margin: 10px auto;
-            width: 80px;
-            height: 80px;
-
-            overflow: hidden;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 1199px) {
-    .App{
-
+  .App {
     .container {
-        padding: 0 60px;
-        .content {
-            .main-content {
-                .icon {
-                    width: 120px;
-                    height: 120px;
-                }
-            }
+      padding: 0 60px;
+      .content {
+        .main-content {
+          .icon {
+            width: 120px;
+            height: 120px;
+          }
         }
+      }
 
-        .daily-forecast{
-            padding: 20px 10px;
-            margin-bottom: 40px;
-        }
+      .daily-forecast {
+        padding: 20px 10px;
+        margin-bottom: 40px;
+      }
     }
-}
-
+  }
 }
 
 @media screen and (max-width: 991px) {
-    .App{
-
+  .App {
     .container {
-        .content {
-            .main-content {
-                flex-direction: column;
-            }
-
-            .sub-content {
-                width: 60%;
-                padding: 10px 20px;
-            }
+      .content {
+        .main-content {
+          flex-direction: column;
         }
 
-        .daily-forecast{
-            flex-wrap: wrap;
-            justify-content: space-around;
-            .forecast{
-                margin: 20px 20px;
-                .forecast-icon{
-                    width: 100px;
-                    height: 100px;
-                }
-            }
+        .sub-content {
+          width: 60%;
+          padding: 10px 20px;
         }
+      }
+
+      .daily-forecast {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .forecast {
+          margin: 20px 20px;
+          .forecast-icon {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
     }
-}
-
+  }
 }
 
 @media screen and (max-width: 767px) {
-    .App{
-
+  .App {
     .container {
-        .location-info {
-            flex-direction: column-reverse;
-            .clock {
-                width: 100%;
-            }
-
-            .clock:last-child {
-                margin-bottom: 20px;
-            }
+      .location-info {
+        flex-direction: column-reverse;
+        .clock {
+          width: 100%;
         }
-        .content {
-            flex-direction: column;
-            .main-content {
-                width: 100%;
-                flex-direction: row;
-                justify-content: space-around;
-                margin-bottom: 50px;
-                .icon {
-                    width: 150px;
-                    height: 150px;
-                }
-            }
 
-            .sub-content {
-                width: 100%;
-            }
+        .clock:last-child {
+          margin-bottom: 20px;
         }
+      }
+      .content {
+        flex-direction: column;
+        .main-content {
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-around;
+          margin-bottom: 50px;
+          .icon {
+            width: 150px;
+            height: 150px;
+          }
+        }
+
+        .sub-content {
+          width: 100%;
+        }
+      }
     }
-}
-
+  }
 }
 
 @media screen and (max-width: 599px) {
-    .App {
-        width: 100%;
-        .container {
-            .content {
-                .sub-content {
-                    flex-direction: row;
-                    .box {
-                        flex-direction: column;
-                        .in-day-stat {
-                            margin: 20px 0;
-                        }
-                    }
-                }
+  .App {
+    width: 100%;
+    .container {
+      .content {
+        .sub-content {
+          flex-direction: row;
+          .box {
+            flex-direction: column;
+            .in-day-stat {
+              margin: 20px 0;
             }
-            .daily-forecast{
-                .forecast{
-                    margin: 20px 0;
-                }
-            }
+          }
         }
+      }
+      .daily-forecast {
+        .forecast {
+          margin: 20px 0;
+        }
+      }
     }
+  }
 }
 
 @media screen and(max-width: 468px) {
-    .App {
-        .input {
-            width: 300px;
-        }
-        .container {
-            .content {
-                .main-content {
-                    flex-direction: column;
-                }
-            }
-        }
+  .App {
+    .input {
+      width: 300px;
     }
+    .container {
+      .content {
+        .main-content {
+          flex-direction: column;
+        }
+      }
+    }
+  }
 }

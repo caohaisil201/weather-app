@@ -1,20 +1,16 @@
-const StatItem = ({ name, humidity, wind, max, min, sunrise, sunset }) => {
-    function getStat() {
-        if (humidity) return `${humidity} %`;
-        else if (wind) return `${wind}kph`;
-        else if (max) return `${max} \u00B0C`;
-        else if (min) return `${min} \u00B0C`;
-        else if (sunrise) return `${sunrise}`;
-        else if (sunset) return `${sunset}`;
-        else return `0`;
-    }
+import React from 'react';
 
-    return (
-        <div className="in-day-stat">
-            <h2>{getStat()}</h2>
-            <p>{name}</p>
-        </div>
-    );
+const StatItem = ({name, icon, value}) => {
+
+  console.log(icon);
+
+  return (
+    <div className="in-day-stat">
+      <h2>{name}</h2>
+      {React.createElement(icon, {className: 'icon'})}
+      <p>{value}</p>
+    </div>
+  );
 };
 
 export default StatItem;

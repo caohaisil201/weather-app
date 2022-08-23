@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended"],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "linebreak-style": 0,
+    "semi": "error",
+    "max-lines": ["error", 500],
+    "indent": ["error", 2],
+    "quotes": ["error", "single"],
+    "curly": "error",
+    "object-curly-spacing": 0,
+    "no-console": "off",
+    "camelcase": [
+      "error",
+      {
+        "ignoreDestructuring": true,
+        "ignoreImports": true,
+        "ignoreGlobals": true
+      }
+    ],
+    "no-var": "error",
+    "space-before-function-paren": ["error", "always"],
+    "no-inline-comments": "error",
+    "no-dupe-keys": "error",
+    "no-dupe-else-if": "error",
+    "no-duplicate-imports": "error",
+    "no-duplicate-case": "error",
+    "no-undef": "error",
+    "no-unused-vars": "error",
+    "valid-typeof": "error",
+    "react/prop-types": 0,
+    "prefer-template": "error"
+  }
+}
