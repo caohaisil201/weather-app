@@ -1,19 +1,19 @@
-import { useContext } from 'react'
-import ForecastItem from '../ForecastItem'
-import { Context } from '../../store/context'
+import React, { useContext } from 'react';
+import ForecastItem from '../ForecastItem';
+import { Context } from '../../store/context';
 
 const DailyForecast = () => {
-  const context = useContext(Context)
-  let show = true
-  let forecastContext = context?.data[0]?.forecast?.forecastday[0]?.hour
+  const context = useContext(Context);
+  let show = true;
+  let forecastContext = context?.data[0]?.forecast?.forecastday[0]?.hour;
 
   if (forecastContext) {
-    show = true
+    show = true;
     forecastContext = forecastContext.filter((elem, index) => {
-      return index % 4 === 0
-    })
+      return index % 4 === 0;
+    });
   } else {
-    show = false
+    show = false;
   }
 
   return (
@@ -30,7 +30,7 @@ const DailyForecast = () => {
                   icon={item.condition.icon}
                   text={item.condition.text}
                 />
-              )
+              );
             })
           ) : (
             <></>
@@ -38,7 +38,7 @@ const DailyForecast = () => {
         </div>
       </div>
     )
-  )
-}
+  );
+};
 
-export default DailyForecast
+export default DailyForecast;

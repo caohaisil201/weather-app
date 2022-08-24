@@ -1,13 +1,13 @@
-import { useContext } from 'react'
-import './style.scss'
-import MainContent from './MainContent'
-import SubContent from './SubContent'
-import Clock from '../Clock'
-import { Context } from '../../store/context'
+import React, { useContext } from 'react';
+import './style.scss';
+import MainContent from './MainContent';
+import SubContent from './SubContent';
+import Clock from '../Clock';
+import { Context } from '../../store/context';
 
 const MainData = () => {
-  const context = useContext(Context)
-  const dataContext = context.data
+  const context = useContext(Context);
+  const dataContext = context.data;
 
   return (
     <div className="container">
@@ -20,7 +20,7 @@ const MainData = () => {
         <SubContent data={dataContext[0]} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MainData
+export default MainData;

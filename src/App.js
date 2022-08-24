@@ -1,4 +1,5 @@
 import './assets/style/_app.scss';
+import React from 'react';
 import Background from './components/Background';
 import Input from './components/Input';
 import MainData from './components/MainData';

@@ -23,6 +23,7 @@ function Data (name, icon, value) {
 
 function SubContent ({ data }) {
   const [dataList, setDataList] = useState([]);
+  
   useEffect(() => {
     if(!checkEmptyObject(data)) {
       const humidity = new Data('Humidity', WiHumidity, `${data.current.humidity} %`);

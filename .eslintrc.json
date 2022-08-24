@@ -18,7 +18,7 @@
     "quotes": ["error", "single"],
     "curly": "error",
     "object-curly-spacing": 0,
-    "no-console": "off",
+    "no-console": "error",
     "camelcase": [
       "error",
       {
@@ -28,7 +28,6 @@
       }
     ],
     "no-var": "error",
-    "space-before-function-paren": ["error", "always"],
     "no-inline-comments": "error",
     "no-dupe-keys": "error",
     "no-dupe-else-if": "error",
