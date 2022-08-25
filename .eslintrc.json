@@ -18,7 +18,7 @@
     "quotes": ["error", "single"],
     "curly": "error",
     "object-curly-spacing": 0,
-    "no-console": "error",
+    "no-console": "off",
     "camelcase": [
       "error",
       {

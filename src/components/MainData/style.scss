@@ -49,6 +49,8 @@
       flex-direction: column;
       justify-content: space-around;
       .box {
+        height: 100%;
+        
         .in-day-stat {
           min-width: 100px;
           text-align: center;
