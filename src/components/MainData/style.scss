@@ -3,6 +3,8 @@
   padding: 0 100px;
   margin: 20px 0;
 
+  user-select: none;
+
   .location-info {
     width: 100%;
     display: flex;
@@ -27,6 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       .icon {
         width: 130px;
         height: 130px;
@@ -48,14 +51,15 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      
       .box {
         height: 100%;
-        
+
         .in-day-stat {
           min-width: 100px;
           text-align: center;
 
-          .icon{
+          .icon {
             width: 2rem;
             height: 2rem;
           }

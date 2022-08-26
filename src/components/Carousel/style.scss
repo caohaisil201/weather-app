@@ -1,14 +1,20 @@
 .carousel{
-  width: 80%;
   height: 100%;
   margin: 0 auto;
 
-  overflow: hidden;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
+  justify-content: center;
   position: relative;
+
+  .showList{
+    width: 70%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 20%;
+  }
   
   .prev,
   .next{
@@ -19,6 +25,11 @@
     transform: translateY(-50%);
 
     cursor: pointer;
+    user-select: none;
+
+    &.disable{
+      pointer-events: none;
+    }
   }
 
   .prev{
@@ -31,5 +42,33 @@
 
   .hide{
     display: none;
+  }
+
+  .slideToRight {
+    animation: toRight 2s;
+  }
+
+  .slideToLeft {
+    animation: toLeft 2s;
+  }
+}
+
+@keyframes toLeft {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(160%);
+  }
+}
+
+@keyframes toRight {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-160%);
   }
 }
